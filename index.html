@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ananya Nagar</title>
+  <meta name="description" content="Ananya Nagar — competitive math, STEM leadership, and service." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brandDot"></span>
+        <span class="brandText">Ananya</span>
+      </a>
+
+      <nav class="nav">
+        <a class="navLink active" href="index.html">Home</a>
+        <a class="navLink" href="achievements.html">Achievements</a>
+        <a class="navLink" href="goals.html">Goals</a>
+        <a class="navLink" href="hobbies.html">Hobbies</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroLeft">
+        <p class="eyebrow">Personal site • scrapbook touch, clean read</p>
+
+        <!-- Cutout letters (shuffle + assemble) -->
+        <div class="cutoutRow" id="cutout" aria-label="Ananya Nagar">
+          <!-- JS fills these -->
+        </div>
+
+        <h1 class="headline">
+          Competitive math + STEM leadership.<br/>
+          A little scrapbook chaos, on purpose.
+        </h1>
+
+        <p class="subhead">
+          I’m a sophomore at Washington High School in Fremont, CA. I care about
+          <b>math</b>, <b>physics</b>, and building communities through <b>STEM outreach</b>.
+        </p>
+
+        <div class="heroChips">
+          <span class="chip">AIME Qualifier</span>
+          <span class="chip">Top 10% AMC 10</span>
+          <span class="chip">BMT Honorable Mention ×2</span>
+        </div>
+
+        <div class="heroBtns">
+          <a class="btn primary" href="achievements.html">View achievements</a>
+          <a class="btn ghost" href="hobbies.html">See hobbies</a>
+        </div>
+      </div>
+
+      <div class="heroRight">
+        <!-- Photo + Who I am block -->
+        <div class="paperCard photoBio">
+          <div class="tape tapeLav" aria-hidden="true"></div>
+
+          <div class="photoFrame">
+            <!-- Replace src with your real photo -->
+            <img src="assets/me.jpeg" alt="Photo of Ananya (replace with your own)" class="photo" />
+          </div>
+
+          <div class="bioText">
+            <h2 class="sectionH2">Who I am</h2>
+            <p>
+              I’m <b>Ananya Nagar</b> — competitive math student, student leader, and community volunteer.
+              I like working on hard problems, building clubs that actually run well, and showing up consistently.
+            </p>
+
+            <ul class="miniList">
+              <li><b>Girls Who Code President</b> (WHS)</li>
+              <li><b>STEMist WHS VP</b> + tech intern work</li>
+              <li><b>Special Olympics soccer coach</b></li>
+              <li><b>Schoolhouse tutor</b></li>
+            </ul>
+
+            <p class="smallMuted">
+              Outside of school stuff, I’m into <b>photography</b> (especially taking “real” candid shots over perfect ones).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roles (mixed scrapbook layouts) -->
+    <section class="section">
+      <div class="sectionTop">
+        <h2 class="sectionTitle">What I do</h2>
+        <p class="sectionNote">Same vibe, different layouts — like a real scrapbook page.</p>
+      </div>
+
+      <div class="roleGrid">
+        <!-- Role 1: side-by-side -->
+        <article class="paperCard role roleSide">
+          <div class="roleMedia">
+            <img src="assets/gwc.jpg" alt="GWC photo placeholder" class="roleImg" />
+            <span class="pin" aria-hidden="true"></span>
+          </div>
+          <div class="roleBody">
+            <h3>Girls Who Code — President</h3>
+            <p>
+              I lead weekly meetings and plan activities that actually keep members engaged.
+              I also make weekly slides with sisterhood activities, trailblazers, and interactive coding lessons.
+            </p>
+            <div class="tagRow">
+              <span class="tag">Leadership</span>
+              <span class="tag">Workshops</span>
+              <span class="tag">Cybersecurity Challenge</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Role 2: image top, text below (different layout) -->
+        <article class="paperCard role roleStack">
+          <div class="tape tapeSoft" aria-hidden="true"></div>
+          <img src="assets/stemist.jpg" alt="STEMist photo placeholder" class="roleImgTop" />
+          <div class="roleBody">
+            <h3>STEMist WHS Branch — Vice President</h3>
+            <p>
+              I maintain and update the branch website (HTML/CSS/JS), focusing on usability, accuracy, and reliability.
+              I like “quiet” improvements that make things smoother for everyone.
+            </p>
+            <div class="tagRow">
+              <span class="tag">Web</span>
+              <span class="tag">HTML/CSS/JS</span>
+              <span class="tag">Digital outreach</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Role 3: text first, image on the side (another layout) -->
+        <article class="paperCard role roleFlip">
+          <div class="roleBody">
+            <h3>Special Olympics — Soccer Coach</h3>
+            <p>
+              I assist athletes during practices and competitions (wide age range). I help with drills, game skills,
+              and confidence — and I try to make it genuinely fun.
+            </p>
+            <div class="tagRow">
+              <span class="tag">Service</span>
+              <span class="tag">Inclusion</span>
+              <span class="tag">Coaching</span>
+            </div>
+          </div>
+          <div class="roleMedia">
+            <img src="assets/special-olympics.jpg" alt="Special Olympics photo placeholder" class="roleImg" />
+            <span class="stamp" aria-hidden="true">REAL LIFE</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Hobbies / future strip (you asked: main page has more spots + can include NASA / comps / astronomy) -->
+    <section class="section">
+      <div class="sectionTop">
+        <h2 class="sectionTitle">A few personal panels</h2>
+        <p class="sectionNote">Photo slots + future interests — you can swap these anytime.</p>
+      </div>
+
+      <div class="panelGrid">
+        <article class="panel">
+          <div class="panelHead">
+            <h3>Photography</h3>
+            <span class="panelSticker">favorite</span>
+          </div>
+          <div class="panelMedia">
+            <img src="assets/hobby1.jpg" alt="Photography placeholder" class="panelImg" />
+          </div>
+          <p class="panelText">
+            I like taking photos that feel like memories — not staged, not perfect. If a picture looks too “clean,”
+            I usually don’t like it.
+          </p>
+        </article>
+
+        <article class="panel">
+          <div class="panelHead">
+            <h3>Space / Astronomy</h3>
+            <span class="panelSticker soft">future</span>
+          </div>
+          <div class="panelMedia">
+            <img src="assets/hobby2.jpg" alt="Astronomy placeholder" class="panelImg" />
+          </div>
+          <p class="panelText">
+            I want to go deeper in astronomy + physics and build more experience through competitions and research.
+          </p>
+        </article>
+
+        <article class="panel notePanel">
+          <h3>Next steps (tiny)</h3>
+          <ul class="checkList">
+            <li>More math competitions + training</li>
+            <li>F = ma / astronomy goals (eventually)</li>
+            <li>Build a stronger research foundation</li>
+          </ul>
+          <p class="tinyMuted">
+            (More detail lives on the Goals page — this is just a peek.)
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT block at end (every page) -->
+    <section class="contactBlock">
+      <div class="contactInner">
+        <div>
+          <h2>Contact me</h2>
+          <p>If you want to collaborate, offer mentorship, or invite me to something — email is best.</p>
+        </div>
+        <a class="btn primary" href="mailto:nagar.ananya.01@gmail.com">Email me</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="yr"></span> Ananya Nagar</span>
+      <span class="footerDot">•</span>
+      <span>Lavender scrapbook accent • clean layout</span>
+    </footer>
+  </main>
+
+  <script src="site.js"></script>
+</body>
+</html>
