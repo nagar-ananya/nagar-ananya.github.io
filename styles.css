@@ -613,3 +613,13 @@ body:after{
   background: linear-gradient(0deg, rgba(255,255,255,.10), rgba(255,255,255,0));
   opacity:.25;
 }
+
+.olympicspic{
+  object-fit: contain;
+}
+
+.certlink {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+}
