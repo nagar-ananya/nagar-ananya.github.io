@@ -1,120 +1,163 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hobbies — Ananya Nagar</title>
-  <meta name="description" content="Hobbies: photography, reading, music, and little personal things." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hobbies · Ananya Nagar</title>
+  <meta name="description" content="Hobbies: photography, reading, music, and little personal things.">
+  <meta name="theme-color" content="#f5f0e6">
+  <meta property="og:title" content="Hobbies · Ananya Nagar">
+  <meta property="og:description" content="Hobbies: photography, reading, music, and little personal things.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="site.js" defer></script>
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brandDot"></span>
-        <span class="brandText">Ananya</span>
-      </a>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.8v12.4a1 1 0 0 0 1.5.86l10-6.2a1 1 0 0 0 0-1.72l-10-6.2A1 1 0 0 0 8 5.8z"/></symbol>
+    <symbol id="i-sigma" viewBox="0 0 24 24"><path d="M17 5H7l6 7-6 7h10"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="15" r="5.5"/><path d="M8.6 10.6 6 3h4l2 4.5L14 3h4l-2.6 7.6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5.5A1.5 1.5 0 0 1 4.5 4H9a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5h-5A1.5 1.5 0 0 1 3 16z"/><path d="M21 5.5A1.5 1.5 0 0 0 19.5 4H15a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5h5a1.5 1.5 0 0 0 1.5-1.5z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M15.5 4.6a3.5 3.5 0 0 1 0 6.8M17.5 14a6.5 6.5 0 0 1 4 6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-soccer" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7.5 3.8 2.8-1.5 4.5H9.7l-1.5-4.5z"/><path d="M12 3v4.5M20.4 9.3l-4.6 1M17.3 19.6l-3-4.8M6.7 19.6l3-4.8M3.6 9.3l4.6 1"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11v4.5c3 2.3 8 2.3 11 0V11M21.5 9v5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.8l1.4-2h4.6l1.4 2h1.8A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.5"/></symbol>
+    <symbol id="i-planet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="10" ry="3.6" transform="rotate(-25 12 12)"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.8 18.2A1.9 1.9 0 0 0 6.5 21h11a1.9 1.9 0 0 0 1.7-2.8L14 9V3"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.6 4.3 2.7 6.4 7 7-4.3.6-6.4 2.7-7 7-.6-4.3-2.7-6.4-7-7 4.3-.6 6.4-2.7 7-7z"/></symbol>
+  </svg>
 
-      <nav class="nav">
-        <a class="navLink" href="index.html">Home</a>
-        <a class="navLink" href="achievements.html">Achievements</a>
-        <a class="navLink" href="goals.html">Goals</a>
-        <a class="navLink active" href="hobbies.html">Hobbies</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Ananya Nagar, home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="6.5" fill="#ffd84d" stroke="#1b1f2a" stroke-width="1.5"/>
+          <g class="brand-orbit"><circle cx="16" cy="16" r="13" fill="none" stroke="#1b1f2a" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="2.5 2.5"/><circle cx="29" cy="16" r="2.6" fill="#d9432b" stroke="#1b1f2a" stroke-width="1"/></g>
+        </svg>
+        <span>Ananya Nagar</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="goals.html">Goals</a>
+        <a href="hobbies.html" aria-current="page">Hobbies</a>
+        <a class="nav-cta" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="pageHero dreamy">
-      <div class="pageHeroInner">
-        <h1 class="pageTitle">Hobbies</h1>
-        <p class="pageSub">
-          These are some of my favorite ways to unwind and express myself outside of academics.
-        </p>
-      </div>
+  <main id="main">
+    <section class="page-hero wrap">
+      <p class="kicker">Hobbies</p>
+      <h1 class="page-title">Off the <em>clock.</em></h1>
+      <p class="page-sub">These are some of my favorite ways to unwind and express myself outside of academics.</p>
     </section>
 
-    <section class="section">
-      <div class="collageGrid">
-        <article class="collageCard">
-          <!-- <div class="tape tapeLav" aria-hidden="true"></div> -->
+    <section class="section wrap" id="photography">
+      <div class="photo-feature">
+        <div class="photo-copy" data-reveal>
+          <span class="badge red"><svg class="i i-camera" aria-hidden="true"><use href="#i-camera"/></svg>My favorite</span>
           <h2>Photography</h2>
           <p>
             My favorite. I like candid shots and tiny details (light, shadow, expressions).
             This section is meant to become a mini gallery over time.
           </p>
-          <div class="collageMedia">
-            <img src="assets/hobby3.jpg" alt="Photography placeholder" class="collageImg" />
-            <img src="assets/hobby4.jpeg" alt="Photography placeholder" class="collageImg" />
-            
-          </div>
-          <p class="tinyMuted">Road trips and hikes are the best places to take scenic shots. :)</p>
-        </article>
+          <p class="aside">Road trips and hikes are the best places to take scenic shots. :)</p>
+        </div>
+        <div class="gallery" data-reveal>
+          <figure class="tall" style="--rot:-2deg"><span class="tape" aria-hidden="true"></span><img src="assets/hobby3.jpg" alt="Misty teal sky over a line of dark trees" loading="lazy" width="1050" height="1400"></figure>
+          <figure style="--rot:1.5deg"><img src="assets/hobby4.jpeg" alt="Fog rolling over a forest above a rocky mountain stream" loading="lazy" width="1600" height="1200"></figure>
+          <figure style="--rot:-1deg"><span class="tape blue" aria-hidden="true" style="--rot:5deg"></span><img src="assets/hobby1.jpeg" alt="Sun breaking through clouds over green fields" loading="lazy" width="1600" height="1200"></figure>
+        </div>
+      </div>
+    </section>
 
-        <article class="collageCard alt">
+    <section class="section wrap" id="reading-music">
+      <div class="hobby-pair">
+        <article class="hobby-card card" data-reveal>
+          <span class="badge blue"><svg class="i i-book" aria-hidden="true"><use href="#i-book"/></svg>Reading</span>
           <h2>Reading</h2>
           <p>
             I like longer, more “serious” novels where I can really sink into the world and characters.
-            I also enjoy fandom spaces and character development, like Marlene Mckinnon from Harry Potter Maruaders.
+            I also enjoy fandom spaces and character development, like Marlene McKinnon from Harry Potter Marauders.
           </p>
-          <div class="quoteCard">
+          <blockquote class="quote">
             <p>“It is what you read when you don't have to that determines what you will be when you can't help it.”</p>
-            <span class="quoteBy">Oscar Wilde</span>
-          </div>
-          <img src="assets/hobby5.jpg" alt="Photography placeholder" class="collageImg" style="height: 200px; margin-top: 20px;" />
-          <span class="quoteBy">Credits: sophithil</span>
+            <cite>Oscar Wilde</cite>
+          </blockquote>
+          <figure class="hobby-img">
+            <img src="assets/hobby5.jpg" alt="Fan art of Marauders-era Harry Potter characters" loading="lazy" width="1080" height="953" style="object-position:50% 20%">
+            <figcaption>Credits: sophithil</figcaption>
+          </figure>
         </article>
 
-        <article class="collageCard">
-          <!-- <div class="tape tapeSoft" aria-hidden="true"></div> -->
-          <h2>Music</h2>
+        <article class="hobby-card card" data-reveal>
+          <span class="badge yellow"><svg class="i i-music" aria-hidden="true"><use href="#i-music"/></svg>Music</span>
+          <h2>Music<span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span></h2>
           <p>
             Arctic Monkeys, Billie Eilish, The Neighbourhood are my favorite singers and bands that feel like mood boards.
           </p>
-          <div class="musicTags">
-            <span class="tag">Arctic Monkeys</span>
-            <span class="tag">Billie Eilish</span>
-            <span class="tag">The Neighbourhood</span>
-          </div>
-          <img src="assets/hobby6.jpg" alt="Photography placeholder" class="collageImg" style="height: 200px; margin-top: 20px;" />
-          <!-- <p class="tinyMuted">You can swap this for Spotify embeds later if you want.</p> -->
+          <ul class="tags"><li>Arctic Monkeys</li><li>Billie Eilish</li><li>The Neighbourhood</li></ul>
+          <figure class="hobby-img fill">
+            <img src="assets/hobby6.jpg" alt="Arctic Monkeys AM album art: a white sound wave on black" loading="lazy" width="736" height="414">
+          </figure>
         </article>
-
-        <!-- <article class="collageCard alt">
-          <h2>Sweet things</h2>
-          <p>
-            Eating, especially sweet stuff. It’s not deep. It’s just true.
-          </p>
-          <div class="miniGrid">
-            <div class="miniBox">Photo slot</div>
-            <div class="miniBox">Photo slot</div>
-            <div class="miniBox">Photo slot</div>
-            <div class="miniBox">Photo slot</div>
-          </div>
-        </article> -->
       </div>
     </section>
 
-    <section class="contactBlock">
-      <div class="contactInner">
+    <!-- CONTACT -->
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card" data-reveal>
         <div>
-          <h2>Contact me</h2>
-          <p>Email is best.</p>
+          <p class="kicker">Get in touch</p>
+          <h2 id="contact-title">Contact me</h2>
+          <p>If you want to collaborate, offer mentorship, or invite me to something, email is best.</p>
         </div>
-        <a class="btn primary" href="mailto:nagar.ananya.01@gmail.com">Email me</a>
+        <div class="contact-actions">
+          <div class="contact-buttons">
+            <a class="btn btn-primary" href="mailto:nagar.ananya.01@gmail.com"><svg class="i i-mail" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+            <button class="btn btn-ghost copy" type="button" data-copy="nagar.ananya.01@gmail.com" hidden><svg class="i i-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="i i-check" aria-hidden="true"><use href="#i-check"/></svg><span class="copy-label">Copy address</span></button>
+          </div>
+          <span class="contact-email">nagar.ananya.01@gmail.com</span>
+        </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <span>© <span id="yr"></span> Ananya Nagar</span>
-      <span class="footerDot">•</span>
-      <span>Hobbies</span>
-    </footer>
   </main>
 
-  <script src="site.js"></script>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span data-year>2026</span> Ananya Nagar · Hobbies</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="goals.html">Goals</a>
+        <a href="hobbies.html">Hobbies</a>
+      </nav>
+      <a class="to-top" href="#top">Back to top <svg class="i i-up" aria-hidden="true"><use href="#i-up"/></svg></a>
+    </div>
+  </footer>
 </body>
 </html>

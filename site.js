@@ -1,76 +1,110 @@
-// site.js
+// site.js: shared behavior for every page
 (function () {
+  "use strict";
+
+  const root = document.documentElement;
+  root.classList.add("js");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   // Year in footer
-  const yr = document.getElementById("yr");
-  if (yr) yr.textContent = String(new Date().getFullYear());
-
-  // Build cutout letters only on Home page (where #cutout exists)
-  const cutout = document.getElementById("cutout");
-  if (!cutout) return;
-
-  const text = "ANANYA NAGAR";
-  // Create letters with random start offsets so it feels like a scrapbook shuffle
-  for (const ch of text) {
-    if (ch === " ") {
-      const sp = document.createElement("span");
-      sp.style.width = "10px";
-      sp.style.display = "inline-block";
-      cutout.appendChild(sp);
-      continue;
-    }
-    const el = document.createElement("span");
-    el.className = "cut";
-    el.textContent = ch;
-
-    // random starting offsets (more noticeable)
-    const sx = (Math.random() * 220 - 110).toFixed(0) + "px";
-    const sy = (Math.random() * 120 - 60).toFixed(0) + "px";
-    const rot = (Math.random() * 18 - 9).toFixed(2) + "deg";
-
-    el.style.setProperty("--sx", sx);
-    el.style.setProperty("--sy", sy);
-    el.style.setProperty("--rot", rot);
-
-    cutout.appendChild(el);
-  }
-
-  const letters = Array.from(cutout.querySelectorAll(".cut"));
-
-  // 1) Fly-in assemble
-  letters.forEach((el, i) => {
-    setTimeout(() => el.classList.add("show"), 140 + i * 55);
+  document.querySelectorAll("[data-year]").forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
   });
 
-  // 2) “Cliché scrapbook shuffle”: after they land, wiggle closer together
-  // feels like hand-placed letters being nudged into alignment.
-  setTimeout(() => {
-    letters.forEach((el) => el.classList.add("shuffle"));
+  // Solid header once the page scrolls
+  const header = document.querySelector(".site-header");
+  const onScroll = () => header && header.classList.toggle("scrolled", window.scrollY > 8);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
 
-    let steps = 10;
-    const interval = setInterval(() => {
-      steps -= 1;
-
-      letters.forEach((el) => {
-        // tiny wiggles
-        const r = (Math.random() * 6 - 3).toFixed(2);
-        el.style.setProperty("--rot", `${r}deg`);
-      });
-
-      if (steps <= 0) {
-        clearInterval(interval);
-        // settle
-        letters.forEach((el) => el.style.setProperty("--rot", (Math.random() * 2 - 1).toFixed(2) + "deg"));
+  // Mobile menu
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("site-nav");
+  if (toggle && nav) {
+    const isOpen = () => toggle.getAttribute("aria-expanded") === "true";
+    const setOpen = (open) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("menu-open", open);
+    };
+    toggle.addEventListener("click", () => setOpen(!isOpen()));
+    nav.addEventListener("click", (e) => {
+      if (e.target.closest("a")) setOpen(false);
+    });
+    document.addEventListener("click", (e) => {
+      if (isOpen() && !e.target.closest(".header-inner")) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isOpen()) {
+        setOpen(false);
+        toggle.focus();
       }
-    }, 120);
-  }, 1200);
+    });
+  }
 
-  // 3) Hover: re-shuffle (noticeable but not obnoxious)
-  cutout.addEventListener("mouseenter", () => {
-    letters.forEach((el, i) => {
-      setTimeout(() => {
-        const r = (Math.random() * 10 - 5).toFixed(2) + "deg";
-        el.style.setProperty("--rot", r);
-      }, i * 15);
+  // Reveal on scroll. Only elements still below the fold get hidden,
+  // so nothing already on screen ever blinks out.
+  const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+  if (!reduceMotion && "IntersectionObserver" in window && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("reveal-in");
+          entry.target.classList.remove("reveal-pending");
+          io.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    revealEls.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+      const group = Array.from(el.parentElement.children).filter((c) => c.hasAttribute("data-reveal"));
+      el.style.setProperty("--d", Math.min(group.indexOf(el), 5) * 90 + "ms");
+      el.classList.add("reveal-pending");
+      io.observe(el);
+    });
+  }
+
+  // Rotating words in the hero
+  const rotator = document.querySelector("[data-rotate]");
+  if (rotator && !reduceMotion) {
+    let words = [];
+    try {
+      words = JSON.parse(rotator.getAttribute("data-rotate"));
+    } catch (_) {
+      words = [];
+    }
+    let i = 0;
+    if (words.length > 1) {
+      setInterval(() => {
+        rotator.classList.add("out");
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          rotator.textContent = words[i];
+          rotator.classList.remove("out");
+        }, 380);
+      }, 2800);
+    }
+  }
+
+  // Copy email address (the button stays hidden where the clipboard API is unavailable)
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    if (!navigator.clipboard || !window.isSecureContext) return;
+    btn.hidden = false;
+    const label = btn.querySelector(".copy-label");
+    const original = label ? label.textContent : "";
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(btn.getAttribute("data-copy"));
+        btn.classList.add("copied");
+        if (label) label.textContent = "Copied!";
+        setTimeout(() => {
+          btn.classList.remove("copied");
+          if (label) label.textContent = original;
+        }, 1800);
+      } catch (_) {
+        // The address is also printed on the page, so it can still be copied by hand.
+      }
     });
   });
 })();
