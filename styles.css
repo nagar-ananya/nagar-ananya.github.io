@@ -113,7 +113,6 @@ strong{font-weight:600}
 }
 .sticky.blue{background:#cfe0ff}
 .sticky.pink{background:#ffd3c9}
-.hand-note{font:700 22px/1 var(--hand);color:var(--red-ink)}
 
 /* ---------- Header ---------- */
 .site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid transparent;transition:background-color .3s,border-color .3s}
@@ -338,7 +337,6 @@ strong{font-weight:600}
 .stat-value{margin-bottom:10px;font-family:var(--serif);font-weight:600;font-variation-settings:"opsz" 72;font-size:clamp(2rem,3vw,2.5rem);line-height:1;letter-spacing:-.02em}
 .stat-label{font-weight:600;font-size:15px;line-height:1.35}
 .stat-note{margin-top:4px;font-size:13.5px;line-height:1.45;color:var(--muted)}
-.stat .hand-note{position:absolute;top:10px;right:14px;transform:rotate(-8deg)}
 @media (max-width:1040px){
   .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
   .stat:last-child{grid-column:span 2}
@@ -518,9 +516,6 @@ strong{font-weight:600}
 .award h3{margin:0 0 8px;font-size:1.22rem;line-height:1.3;letter-spacing:-.01em}
 .award p{margin:0;color:var(--ink-2)}
 .award .text-link{margin-top:auto;padding-top:18px}
-.award.featured{background:#fff8d9;border-color:rgba(190,140,0,.4)}
-.award.featured .icon-tile{background:var(--yellow)}
-.award .hand-note{position:absolute;top:-14px;right:18px;transform:rotate(-6deg);font-size:26px}
 @media (max-width:1040px){.award-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.award-grid,.award-grid.two{grid-template-columns:1fr}}
 
