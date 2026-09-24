@@ -1,7 +1,7 @@
 /* =========================================================
    Ananya Nagar: site styles
    "Math notebook" theme: graph paper, ink, red pen, highlighter,
-   plus a few scrapbook touches (tape, sticky notes, polaroids).
+   plus a few scrapbook touches (tape, polaroids).
    ========================================================= */
 
 :root{
@@ -103,16 +103,6 @@ strong{font-weight:600}
 }
 .tape.red{background:rgba(217,67,43,.38)}
 .tape.blue{background:rgba(36,71,184,.28)}
-.sticky{
-  position:absolute;z-index:4;
-  padding:12px 16px 14px;max-width:190px;
-  background:#ffe57a;color:var(--ink);
-  font:700 22px/1.05 var(--hand);
-  box-shadow:0 14px 22px -14px rgba(27,31,42,.55),inset 0 -18px 18px -18px rgba(27,31,42,.12);
-  transform:rotate(var(--rot,-4deg));
-}
-.sticky.blue{background:#cfe0ff}
-.sticky.pink{background:#ffd3c9}
 
 /* ---------- Header ---------- */
 .site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid transparent;transition:background-color .3s,border-color .3s}
@@ -306,8 +296,6 @@ strong{font-weight:600}
 .polaroid .tape{top:-12px;left:50%;margin-left:-46px;--rot:3deg}
 .formula{position:absolute;z-index:1;font:700 28px/1 var(--hand);color:var(--ink-2);transform:rotate(-8deg);white-space:nowrap}
 .f1{right:1%;top:5%}
-.s1{left:-4%;top:17%;--rot:-6deg}
-.s2{right:-5%;bottom:13%;--rot:5deg}
 .fig-caption{margin:18px 0 0;text-align:center;font:500 12.5px/1.4 var(--mono);color:var(--muted)}
 
 @media (max-width:960px){
@@ -316,9 +304,6 @@ strong{font-weight:600}
 }
 @media (max-width:520px){
   .eyebrow{font-size:11.5px;letter-spacing:0}
-  .s1{left:0;top:4%}
-  .s2{right:0;bottom:2%}
-  .sticky{font-size:19px;padding:10px 12px 12px;max-width:150px}
   .formula{font-size:23px}
 }
 
